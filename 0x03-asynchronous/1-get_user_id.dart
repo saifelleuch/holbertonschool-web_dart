@@ -1,6 +1,8 @@
 import '1-util.dart';
 
+
 Future<String> getUserId() async {
   final userData = await fetchUserData();
-  return userData['id'];
+  final decodedData = json.decode(userData);
+  return decodedData['id'];
 }
